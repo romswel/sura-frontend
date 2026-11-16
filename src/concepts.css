@@ -1,0 +1,694 @@
+.concept-site {
+  color-scheme: light;
+  container-type: inline-size;
+  position: relative;
+  overflow: hidden;
+  color: #2b3928;
+  background: #e1e1d1;
+  min-height: 330px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.concept-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 23px 28px;
+  border-bottom: 1px solid #3e4b3422;
+}
+.concept-nav > strong {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: -1px;
+}
+.concept-nav > span {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  font-size: 7px;
+  white-space: pre;
+}
+.concept-nav-dot {
+  font-size: 15px;
+}
+.concept-main {
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  min-height: 270px;
+}
+.concept-copy {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 29px 0 29px 28px;
+}
+.concept-eyebrow {
+  font-size: 6px;
+  letter-spacing: 1.4px;
+  margin-bottom: 19px;
+}
+.concept-copy h3 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 37px;
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -1.8px;
+  white-space: pre-line;
+}
+.concept-copy p {
+  font-size: 8px;
+  line-height: 1.8;
+  max-width: 160px;
+  margin-top: 14px;
+  padding-right: 8px;
+}
+.concept-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 19px;
+  font-size: 7px;
+  background: #344b2b;
+  color: #f1f1e3;
+  padding: 10px 12px;
+  margin-top: 20px;
+  border-radius: 2px;
+}
+.concept-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 15px 28px;
+  border-top: 1px solid #3e4b3422;
+  font-size: 5px;
+  letter-spacing: 1px;
+}
+.concept-art {
+  position: relative;
+  min-height: 270px;
+  overflow: hidden;
+}
+.coffee-art {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(ellipse at 40% 50%, #e4dfbb 0, #d6d5ba 40%, #aeb59c 100%);
+}
+.coffee-orbit {
+  position: absolute;
+  width: 150%;
+  aspect-ratio: 1;
+  border: 1px solid #747f4d44;
+  border-radius: 50%;
+  left: 7%;
+  top: 0;
+}
+.coffee-saucer {
+  width: 75%;
+  aspect-ratio: 1;
+  position: relative;
+  background: radial-gradient(
+    circle at 45% 45%,
+    #e9e6d7 0,
+    #dedac5 55%,
+    #f9f7e9 62%,
+    #ddd7c0 71%,
+    #b9b69d 75%
+  );
+  box-shadow: 9px 18px 16px #4b54384a;
+  border-radius: 50%;
+  transform: rotate(-24deg);
+}
+.coffee-cup {
+  position: absolute;
+  inset: 16%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 41% 39%,
+    #704321 0,
+    #593518 48%,
+    #774b26 55%,
+    #d1bc8c 59%,
+    #f5eeda 62%,
+    #e2dcc3 70%,
+    #d0c8b0 75%
+  );
+  box-shadow: 4px 7px 9px #30372144;
+  display: grid;
+  place-items: center;
+}
+.coffee-cup:after {
+  content: '';
+  position: absolute;
+  right: -22%;
+  top: 36%;
+  width: 32%;
+  height: 25%;
+  border: 7px solid #e6deca;
+  border-radius: 40% 70% 70% 40%;
+  z-index: -1;
+  box-shadow: 3px 5px 5px #30372133;
+}
+.coffee-cup > span {
+  width: 34%;
+  height: 40%;
+  border-radius: 85% 0 85% 10%;
+  background: repeating-linear-gradient(140deg, #ebdbb6 0 3px, #ab7d40 4px 6px);
+  transform: rotate(-25deg);
+  box-shadow: 3px 4px 12px #ebddb965;
+}
+.coffee-caption {
+  position: absolute;
+  bottom: 21px;
+  right: 14px;
+  font-size: 5px;
+  letter-spacing: 1px;
+  color: #576346;
+  writing-mode: vertical-rl;
+}
+.concept-forma {
+  background: #ece7df;
+  color: #44392d;
+}
+.concept-forma .concept-nav {
+  border-color: #796d5b33;
+}
+.concept-forma .concept-nav > strong {
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: -1.5px;
+  font-size: 24px;
+  font-weight: 500;
+}
+.concept-forma .concept-eyebrow {
+  color: #8b7154;
+}
+.concept-forma .concept-copy h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 35px;
+  letter-spacing: -2.3px;
+  line-height: 1.07;
+}
+.concept-forma .concept-copy p {
+  color: #7e705f;
+}
+.concept-forma .concept-button {
+  background: transparent;
+  border-bottom: 1px solid #7c6a52;
+  border-radius: 0;
+  padding: 6px 0;
+  color: #51402d;
+}
+.concept-forma .concept-art {
+  margin: 18px 18px 18px 9px;
+  min-height: 230px;
+}
+.room-art {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #c9c0b0, #e3d8c6 70%, #c1b7a5);
+  overflow: hidden;
+}
+.room-window {
+  position: absolute;
+  width: 58%;
+  height: 95%;
+  top: -11%;
+  right: -5%;
+  border: 9px solid #a69a86;
+  background: linear-gradient(140deg, #e0dbc4, #e8e1d1);
+  transform: skewY(-10deg);
+  box-shadow: -20px 22px 0 #aa9e8722;
+}
+.room-window:after {
+  content: '';
+  position: absolute;
+  width: 5px;
+  height: 100%;
+  left: 50%;
+  background: #a69a86;
+}
+.room-sun {
+  width: 100%;
+  height: 70%;
+  background: linear-gradient(135deg, #fff5cb80, transparent);
+  position: absolute;
+  top: 40%;
+  left: 45%;
+  transform: rotate(45deg);
+}
+.room-plinth {
+  position: absolute;
+  left: 15%;
+  bottom: -2%;
+  width: 62%;
+  height: 30%;
+  background: linear-gradient(90deg, #a99e8b, #b9ae99 20%, #d0c6b5 21%, #c6baa5);
+  transform: skewY(-4deg);
+  box-shadow: 10px 5px 30px #70604a3d;
+}
+.room-vase {
+  position: absolute;
+  width: 27%;
+  height: 24%;
+  bottom: 28%;
+  left: 31%;
+  border-radius: 20% 20% 40% 40%;
+  background: linear-gradient(100deg, #6e6854, #9e977d 55%, #7d755e);
+  box-shadow: 7px 6px 9px #5b543d2b;
+}
+.room-vase > span {
+  position: absolute;
+  left: 40%;
+  top: -160%;
+  height: 180%;
+  width: 3px;
+  background: #4e5035;
+  transform: rotate(-12deg);
+}
+.room-vase > span:before,
+.room-vase > span:after {
+  content: '';
+  position: absolute;
+  width: 26px;
+  height: 10px;
+  border-radius: 100% 0;
+  background: #586044;
+  transform: rotate(30deg);
+  top: 30%;
+  left: 0;
+}
+.room-vase > span:after {
+  left: -24px;
+  top: 57%;
+  transform: rotate(15deg);
+}
+.room-shadow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 11%;
+  background: linear-gradient(transparent, #76695722);
+}
+.concept-offday {
+  background: #e7e2ed;
+  color: #3e304d;
+}
+.concept-offday .concept-nav > strong {
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+.concept-offday .concept-nav {
+  border-color: #6a557233;
+}
+.concept-offday .concept-copy h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 35px;
+  font-weight: 500;
+  letter-spacing: -2px;
+}
+.concept-offday .concept-eyebrow {
+  color: #7f678e;
+}
+.concept-offday .concept-copy p {
+  color: #786887;
+}
+.concept-offday .concept-button {
+  background: #53415f;
+}
+.lamp-art {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 80%, #baabc744, transparent 70%);
+  display: grid;
+  place-items: center;
+}
+.lamp-halo {
+  position: absolute;
+  width: 90%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #d4c9df;
+  top: 16%;
+}
+.lamp-shade {
+  position: absolute;
+  width: 68%;
+  height: 32%;
+  top: 21%;
+  border-radius: 100% 100% 5% 5%/180% 180% 5% 5%;
+  background: linear-gradient(100deg, #634f74, #9884aa 50%, #69527a);
+  box-shadow: 0 8px 8px #513b6533;
+  z-index: 2;
+}
+.lamp-shade:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4%;
+  height: 10%;
+  width: 100%;
+  border-radius: 50%;
+  background: #3f2e4a;
+  box-shadow: 0 4px 13px #e3d3bd99;
+}
+.lamp-stem {
+  position: absolute;
+  top: 35%;
+  height: 45%;
+  width: 9%;
+  background: linear-gradient(90deg, #756382, #b4a1c1, #71607e);
+}
+.lamp-base {
+  position: absolute;
+  top: 78%;
+  width: 45%;
+  height: 7%;
+  border-radius: 50%;
+  background: linear-gradient(100deg, #756084, #a38bb4);
+  box-shadow: 0 7px 8px #4a345650;
+}
+.product-label {
+  position: absolute;
+  bottom: 7%;
+  font-size: 5px;
+  letter-spacing: 1px;
+  color: #695575;
+}
+.concept-alex {
+  background: #dce3e8;
+  color: #2f434f;
+}
+.concept-alex .concept-nav {
+  border-color: #52708033;
+}
+.concept-alex .concept-nav > strong {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+}
+.concept-alex .concept-copy h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 36px;
+  font-weight: 500;
+  letter-spacing: -2px;
+  line-height: 1.06;
+}
+.concept-alex .concept-eyebrow {
+  color: #5f7b8d;
+}
+.concept-alex .concept-copy p {
+  color: #597383;
+}
+.concept-alex .concept-button {
+  background: #3d5868;
+}
+.type-art {
+  position: absolute;
+  inset: 7% 9% 7% 5%;
+  background: #b4c6d2;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transform: rotate(4deg);
+  box-shadow: 6px 8px 0 #a9bdca66;
+}
+.type-art > span {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 148px;
+  color: #3f6175;
+  line-height: 0.65;
+  letter-spacing: -12px;
+  transform: rotate(-12deg) translate(-10px, -15px);
+}
+.type-art > span:nth-child(2) {
+  font-style: italic;
+  transform: rotate(-12deg) translate(0, -10px);
+}
+.type-art > i {
+  font-size: 5px;
+  letter-spacing: 1px;
+  font-style: normal;
+  position: absolute;
+  bottom: 13px;
+  left: 13px;
+  line-height: 1.7;
+}
+.compact .concept-nav {
+  padding: 18px 24px;
+}
+.compact .concept-nav > strong {
+  font-size: 21px;
+}
+.compact .concept-nav > span {
+  font-size: 6px;
+  gap: 15px;
+}
+.compact .concept-copy {
+  padding: 26px 0 26px 24px;
+}
+.compact .concept-eyebrow {
+  font-size: 5px;
+  letter-spacing: 1.2px;
+  margin-bottom: 14px;
+}
+.compact .concept-copy h3 {
+  font-size: 33px;
+}
+.compact .concept-copy p {
+  font-size: 7px;
+  max-width: 150px;
+}
+.compact .concept-button {
+  font-size: 6px;
+  padding: 9px 10px;
+  gap: 17px;
+  margin-top: 17px;
+}
+.compact .concept-main {
+  min-height: 235px;
+}
+.compact .concept-art {
+  min-height: 235px;
+}
+.compact .concept-bottom {
+  padding: 13px 24px;
+  font-size: 4px;
+}
+.compact .type-art > span {
+  font-size: 130px;
+}
+.compact .concept-alex .concept-copy h3 {
+  font-size: 31px;
+}
+@media (max-width: 1100px) {
+  .compact .concept-copy h3 {
+    font-size: 29px;
+  }
+  .compact .concept-nav {
+    padding: 18px 21px;
+  }
+  .compact .concept-copy {
+    padding-left: 21px;
+  }
+  .compact .concept-copy p {
+    font-size: 7px;
+  }
+  .compact .concept-main,
+  .compact .concept-art {
+    min-height: 220px;
+  }
+  .compact.concept-site {
+    min-height: 300px;
+  }
+}
+@media (max-width: 800px) {
+  .compact .concept-nav {
+    padding: 15px 17px;
+  }
+  .compact .concept-nav > strong {
+    font-size: 18px;
+  }
+  .compact .concept-nav > span {
+    font-size: 5px;
+    gap: 8px;
+  }
+  .compact .concept-copy {
+    padding: 23px 0 23px 17px;
+  }
+  .compact .concept-copy h3 {
+    font-size: 24px;
+    letter-spacing: -1.2px;
+  }
+  .compact .concept-eyebrow {
+    font-size: 4px;
+    letter-spacing: 0.8px;
+  }
+  .compact .concept-copy p {
+    font-size: 6px;
+    max-width: 110px;
+    margin-top: 10px;
+  }
+  .compact .concept-button {
+    font-size: 5px;
+    padding: 7px 8px;
+    gap: 10px;
+    margin-top: 13px;
+  }
+  .compact .concept-main,
+  .compact .concept-art {
+    min-height: 185px;
+  }
+  .compact.concept-site {
+    min-height: 255px;
+  }
+  .compact .concept-bottom {
+    padding: 12px 17px;
+    font-size: 3px;
+    letter-spacing: 0.5px;
+  }
+  .compact .type-art > span {
+    font-size: 108px;
+  }
+  .concept-site:not(.compact) .concept-copy h3 {
+    font-size: 40px;
+  }
+}
+@media (max-width: 600px) {
+  .compact .concept-nav {
+    padding: 19px 23px;
+  }
+  .compact .concept-nav > strong {
+    font-size: 22px;
+  }
+  .compact .concept-nav > span {
+    font-size: 6px;
+    gap: 14px;
+  }
+  .compact .concept-copy {
+    padding: 29px 0 29px 23px;
+  }
+  .compact .concept-copy h3 {
+    font-size: 31px;
+    letter-spacing: -1.5px;
+  }
+  .compact .concept-eyebrow {
+    font-size: 5px;
+    letter-spacing: 1px;
+  }
+  .compact .concept-copy p {
+    font-size: 7px;
+    max-width: 143px;
+  }
+  .compact .concept-button {
+    font-size: 6px;
+    padding: 9px 10px;
+    gap: 14px;
+    margin-top: 18px;
+  }
+  .compact .concept-main,
+  .compact .concept-art {
+    min-height: 230px;
+  }
+  .compact.concept-site {
+    min-height: 310px;
+  }
+  .compact .concept-bottom {
+    padding: 14px 23px;
+    font-size: 4px;
+    letter-spacing: 0.6px;
+  }
+  .compact .type-art > span {
+    font-size: 125px;
+  }
+  .concept-site:not(.compact) .concept-nav {
+    padding: 18px;
+  }
+  .concept-site:not(.compact) .concept-nav > strong {
+    font-size: 21px;
+  }
+  .concept-site:not(.compact) .concept-nav > span {
+    font-size: 6px;
+    gap: 10px;
+  }
+  .concept-site:not(.compact) .concept-copy {
+    padding: 24px 0 24px 18px;
+  }
+  .concept-site:not(.compact) .concept-copy h3 {
+    font-size: 29px;
+  }
+  .concept-site:not(.compact) .concept-copy p {
+    font-size: 7px;
+    max-width: 130px;
+  }
+  .concept-site:not(.compact) .concept-eyebrow {
+    font-size: 5px;
+    letter-spacing: 0.8px;
+  }
+  .concept-site:not(.compact) .concept-main,
+  .concept-site:not(.compact) .concept-art {
+    min-height: 230px;
+  }
+  .concept-site:not(.compact) .concept-bottom {
+    font-size: 4px;
+    padding: 14px 18px;
+  }
+  .concept-site:not(.compact) .concept-button {
+    padding: 9px;
+    font-size: 6px;
+    gap: 10px;
+  }
+  .concept-site:not(.compact) .type-art > span {
+    font-size: 120px;
+  }
+}
+@media (max-width: 370px) {
+  .compact .concept-copy {
+    padding-left: 18px;
+  }
+  .compact .concept-copy h3 {
+    font-size: 28px;
+  }
+  .compact .concept-nav {
+    padding-inline: 18px;
+  }
+  .compact .concept-nav > span {
+    font-size: 5px;
+    gap: 9px;
+  }
+  .compact .concept-main,
+  .compact .concept-art {
+    min-height: 210px;
+  }
+  .compact.concept-site {
+    min-height: 290px;
+  }
+  .compact .concept-bottom {
+    padding-inline: 18px;
+    font-size: 3px;
+  }
+  .compact .concept-copy p {
+    font-size: 6px;
+  }
+  .concept-site:not(.compact) .concept-copy h3 {
+    font-size: 25px;
+  }
+  .concept-site:not(.compact) .concept-copy {
+    padding-left: 13px;
+  }
+}
+
+/* Keep every gallery thumbnail aligned regardless of its internal art margins. */
+.compact.concept-forma .concept-art {
+  min-height: 0;
+}
