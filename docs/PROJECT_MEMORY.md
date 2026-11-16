@@ -12,7 +12,7 @@ This file is the current project state for human and AI collaborators. It is che
 - Sura is the current working brand, based on the existing repository names. Final legal/company identity has not been confirmed.
 - Brand direction: dark/black, gray, white, subtle gradients and shadows. The owners delegated the initial logo and detailed theme.
 - Contact details must remain blank: the owners will add their own later. Do not infer public contact information from Git author metadata.
-- The owners are separately researching third-party database, backend, and related providers. No provider is selected yet.
+- The owners selected Cloudflare Workers for the API and Pages for the website and are preparing those deployments in their own tabs. Database/auth and other providers remain unselected.
 
 ## Workspace and Git
 
@@ -30,7 +30,7 @@ This file is the current project state for human and AI collaborators. It is che
 - Brief data remains in React memory. Users can copy or download a text brief. No inquiry submission API or database write exists. Reloading clears the in-page brief. Downloads/clipboard are user-controlled copies.
 - `VITE_CONTACT_EMAIL` is blank. A valid public email enables an explicit mail-app handoff after rebuild; it does not create automatic delivery. No public phone, address, or social account is set.
 - `#/team` is a public planning page. It has no authentication, private records, login form, or demo accounts.
-- Backend: minimal transport-independent TypeScript handler plus Node HTTP adapter. `GET`/`HEAD /api/health` only. Health reports database/auth/inquiries as not configured. No production host, CORS integration, persistent records, email, auth, or chat service is connected.
+- Backend: minimal transport-independent TypeScript handler plus a shared Node HTTP server factory. Node and Cloudflare Workers entry points reuse it; the Worker uses `httpServerHandler` with `nodejs_compat`. `GET`/`HEAD /api/health` only. Local Node and Wrangler health checks passed. Database/auth/inquiries remain unconfigured; no frontend API integration or production deployment is verified.
 - GitHub CI files validate each repository; there is no automatic deployment workflow.
 
 ## Next useful work
@@ -50,7 +50,7 @@ Initial setup evidence:
 - Backend `npm run check`: strict types, three behavioral tests, and compilation passed. Real local HTTP smoke check: health 200 with no-store; unsupported inquiry POST 404.
 - Dependency audits reported zero known vulnerabilities at setup time.
 - The Sura skill passed the bundled skill-creator validator. GitHub workflows are prepared but have not run remotely. Repository origins and existing remote main hashes were checked.
-- Work remains local; no remote push, public deployment, paid account, or provider provisioning occurred.
+- After local Workers preparation, the owner authorized committing and pushing both existing main branches to GitHub. The owner will trigger deployment from their Cloudflare tabs. Verify remote Git hashes after pushing and verify public URLs separately after deployment; no production success is established by these local checks.
 
 Do not equate local checks with deployed service verification. Database, email delivery, authenticated access, real client messaging, and production hosting remain unverified because they are not connected. Mobile checks are browser emulation, not a physical-device test.
 
