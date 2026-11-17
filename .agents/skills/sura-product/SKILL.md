@@ -9,7 +9,7 @@ Read the repository `AGENTS.md` and `docs/PROJECT_MEMORY.md` first. The goal at 
 
 ## Choose the smallest useful stage
 
-Improve the public site, original business concepts, accessibility, performance, or the project-brief journey when these meet the request. Accounts, CRM, persistent inquiries, team chat, client messaging, and payments are future stages until their real storage, authorization, and delivery paths exist. Consult `docs/DECISIONS.md` before selecting providers; the owners are still researching them.
+Improve the public site, original business concepts, accessibility, performance, or the project-brief journey when these meet the request. Accounts, CRM, persistent inquiries, team chat, client messaging, and payments are future stages until their real storage, authorization, and delivery paths exist. Cloudflare Pages/Workers are selected; consult `docs/DECISIONS.md` before choosing the still-undecided data/auth providers.
 
 Treat public marketing, private team work, and client access as distinct access boundaries. In a future integration, prove who may read and modify each record on the server, including membership checks for chats and project files. Do not use browser state as an access control or as the permanent home for client data.
 

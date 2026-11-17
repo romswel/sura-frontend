@@ -8,11 +8,13 @@ Sura is a new web team of two friends starting from zero. The immediate goal is 
 - Read `docs/DECISIONS.md` before changing architecture, scope, or providers.
 - Read `.agents/skills/sura-product/SKILL.md` for Sura-specific product and implementation guidance.
 - Use `docs/DESIGN.md` for visual work and `docs/SETUP.md` for commands/infrastructure.
+- Read `docs/DESIGN_RESEARCH.md` before redesigning. It records the owner's feedback and lessons from the reference projects, with Stayblz given the most weight.
+- Read `docs/PRODUCT_RESEARCH.md` for feature and workflow work. The reference study covers functionality, recovery, access, and client/team journeys as well as appearance.
 
 ## Boundaries that matter
 
 - This is the frontend repository. The API is in the independent `../sura-backend` repository. Preserve both histories and unrelated changes. There is no parent Git repository.
-- Default to free, open-source tools. Provider selections are pending the owners' research. Do not provision accounts, buy services/domains, or introduce a paid dependency without an explicit request.
+- Default to free, open-source tools. The owners selected Cloudflare Pages for the frontend and Workers for the API and report that setup is complete. Database/auth remain undecided. Do not provision accounts, buy services/domains, or introduce a paid dependency without an explicit request.
 - The user explicitly asked to leave public contact details blank for them to fill in later. Never derive contact details from Git identity or invent an address, phone, location, customer, testimonial, metric, or certification.
 - Keep examples labeled as concepts. Do not imply that previews are delivered client projects, that a brief was sent, or that planned CRM/chat/auth already works.
 - Public and private surfaces must stay separate. Never treat a hidden URL, frontend flag, or localStorage value as authentication. Future private operations need server authorization and account-scoped storage.

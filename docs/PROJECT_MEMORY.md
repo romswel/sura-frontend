@@ -1,59 +1,95 @@
-# Sura shared project memory
+﻿# Sura shared project memory
 
 Last updated: 2026-11-17 (Asia/Manila).
 
-This file is the current project state for human and AI collaborators. It is checked into Git. Assistants must read it; it is not automatic synchronization between AI products. The owners explicitly requested shared memory and reusable instructions. Keep durable facts and useful decisions here, not complete chat transcripts or secrets.
+Current facts for human and AI collaborators. Read this and AGENTS.md before working. These files do not automatically synchronize hidden conversations between assistants.
 
-## Confirmed owner intent
+## Owner intent and boundaries
 
-- Two friends are starting a company/team from zero, with free tools and no starting budget.
-- First priority: attract and win the first website client. Help visitors imagine their own business online through multiple original business categories.
-- Longer-term: an all-in-one team and client workspace, including CRM, contact/inquiries, accounts, projects, tasks, and conversations. These should grow in stages, not be presented as already working.
-- Sura is the current working brand, based on the existing repository names. Final legal/company identity has not been confirmed.
-- Brand direction: dark/black, gray, white, subtle gradients and shadows. The owners delegated the initial logo and detailed theme.
-- Contact details must remain blank: the owners will add their own later. Do not infer public contact information from Git author metadata.
-- The owners selected Cloudflare Workers for the API and Pages for the website and are preparing those deployments in their own tabs. Database/auth and other providers remain unselected.
+- Two friends are starting an independent web team with zero starting budget. Win and deliver the first client project before building a large operations platform.
+- Sura is the working brand. The owner authorized the public rebuild and delegated creative/implementation decisions after requesting design AND feature research.
+- Research informs craft, workflows, recovery, and access. Reference products are not Sura client deliveries or assets to copy.
+- Main identity: charcoal/black, gray, white, restrained depth, original geometric S mark. Both light and dark themes now work.
+- Contact details remain blank by explicit owner instruction. Do not derive them from Git identity or invent people, locations, clients, testimonials, metrics, or guarantees.
+- Cloudflare Pages and Workers are selected. During the release audit the owner clarified that public URLs have not been set yet and requested pushing to GitHub for now. No live Cloudflare verification is claimed.
+- Database/auth remain unselected. The private CRM/project/client/chat vision is staged future work. Browser state is never authentication.
 
 ## Workspace and Git
 
-- Parent: `C:\Users\Romswel\sura`; two independent repositories, each on `main`.
-- Frontend origin: `https://github.com/romswel/sura-frontend.git`.
-- Backend origin: `https://github.com/romswel/sura-backend.git`.
-- No parent Git repository. `sura.code-workspace` and the parent `AGENTS.md` are local conveniences; repository instructions travel with each repository.
-- Preserve existing remote URLs/history. Never add Co-authored-by trailers.
+- Parent: C:\Users\Romswel\sura. It is not a Git repository.
+- Independent frontend/backend repositories on their existing main branches.
+- Frontend origin: https://github.com/romswel/sura-frontend.git.
+- Backend origin: https://github.com/romswel/sura-backend.git.
+- Preserve both histories and unrelated work. No Co-authored-by trailers.
+- This rebuild changes frontend source, assets, tests, and documentation. The release audit also hardens backend error headers and tests its shared transport. Reference projects remain untouched.
+- The owner explicitly authorized an audited push on the existing main branches, with no new branch. Verify current commit/push/CI status from Git and GitHub; source publication and a live deployment are separate outcomes.
 
-## Implementation
+## Current public product
 
-- Frontend: React + TypeScript + Vite, Node 24, npm. Plain CSS, system fonts, code-drawn illustrations, original SVG S mark. No paid assets, analytics, external font requests, or third-party runtime services.
-- Public page: offer/services, filterable original concept gallery, native dialog concept details, process, two-person team story, FAQ, and project-brief preparation.
-- Four fictional concepts: Morrow (food & drink), Forma (services), Offday (shops), Alex Morgan (personal brands). They are design explorations, not client deliveries or operational storefronts.
-- Brief data remains in React memory. Users can copy or download a text brief. No inquiry submission API or database write exists. Reloading clears the in-page brief. Downloads/clipboard are user-controlled copies.
-- `VITE_CONTACT_EMAIL` is blank. A valid public email enables an explicit mail-app handoff after rebuild; it does not create automatic delivery. No public phone, address, or social account is set.
-- `#/team` is a public planning page. It has no authentication, private records, login form, or demo accounts.
-- Backend: minimal transport-independent TypeScript handler plus a shared Node HTTP server factory. Node and Cloudflare Workers entry points reuse it; the Worker uses `httpServerHandler` with `nodejs_compat`. `GET`/`HEAD /api/health` only. Local Node and Wrangler health checks passed. Database/auth/inquiries remain unconfigured; no frontend API integration or production deployment is verified.
-- GitHub CI files validate each repository; there is no automatic deployment workflow.
+React + TypeScript + Vite, Node 24, npm, plain CSS. No new runtime dependency or third-party runtime service.
 
-## Next useful work
+- Rebuilt home: concrete websites/shops/web-app offer, interactive workbench, filtered gallery, expandable services, explorable process, two-person story, FAQ, four-step brief builder.
+- Four fictional businesses have distinct compositions and interactions:
+  - Offday Objects: product categories, search, favorites within the open preview, and product details.
+  - Morrow Coffee: categorized sample menu and coffee shortcut.
+  - Forma Studio: expandable project story and approach view.
+  - Alex Morgan: selected-work list and concept stories.
+- Concept/service selection prefills kind/features/reference while retaining existing business/idea text.
+- Brief: project type → pages/features → name/business/idea/timeline/budget → review. Required details reject whitespace-only input. Literal text, internal line breaks, and Unicode are preserved.
+- Clipboard copy and UTF-8 .txt download work. Copy failure leaves selectable text/download available. No inquiry is submitted.
+- VITE_CONTACT_EMAIL stays blank. Configuring it later enables only an explicit mail-app handoff; the visitor sends the email there.
+- #/planner is a public personal project desk sharing the brief. Its launch checklist supports adding steps, status, complete/reopen, search/filter, removal/Undo, progress, and full-plan export.
+- #/team remains public planning information. No login form, demo credentials, private records, or fake successful authentication.
+- Existing #showcase, #services, #approach, #about, and #start anchors remain usable.
+- #/updates is the public release history, linked from navigation and footer. Add reviewed entries to src/updates.ts; no CMS or write endpoint is implied.
 
-1. Owners review brand/copy and supply real contact information. Enable a usable contact channel before advertising the site publicly.
-2. Owners choose a free hosting/provider plan after reviewing `docs/SETUP.md`. Connect a public free subdomain and confirm contact delivery on that host.
-3. Add durable inquiry storage and abuse protection, then an authenticated team inquiry view. Establish authorization, privacy/retention, and backups with the selected provider.
-4. Add project/task records, then scoped client access and persistent messaging when actual workflows call for them.
+## Deliberate browser storage
+
+- Changes stay in React memory by default and survive navigation within the open app. Unsaved changes are lost on reload.
+- Save buttons explicitly opt into localStorage under sura.project-draft.v1. Typing never autosaves.
+- Saved drafts use a bounded schema and a 30-day read lifetime. Expired entries are discarded on load; malformed/unsupported data falls back safely. Later edits need another explicit save.
+- Save/clipboard failures are explained. A save is labeled as saved in this browser, never saved to Sura.
+- Clear project confirms before removing the saved record and resetting the brief/checklist. Individual step removal offers Undo.
+- Brief/checklist tab switches retain pending step text and Undo. Successful Clear also resets pending text, filters, and Undo so a removed task cannot reappear after clearing.
+- Save/read share a 128,000-character JSON limit, covering bounded fields even when control characters expand during serialization. Unsupported options, duplicate selections, and blank task identifiers/titles fall back safely. Unknown properties do not enter application state.
+- This browser storage is personal, unshared, and not account-scoped or a CRM. The interface asks visitors to leave out sensitive information.
+- Theme preference is separate (sura.theme), defaults to dark, and is applied before paint by public/theme-init.js.
+
+## Source and assets
+
+- Manrope variable is bundled locally with its upstream OFL license. No external font requests.
+- Three original generated concept photographs are local WebP files, about 194 KB combined. docs/ASSETS.md records files, exact prompts, provenance, and sizes.
+- Original S mark remains in Brand.tsx and public/sura-mark.svg.
+- Semantic themes: src/styles.css. Fictional business styles: src/concepts.css. Planner/desk: src/planner.css.
+- Data/copy: src/content.ts. Draft schema, validation, exports: src/project.ts. Save state: src/hooks/useProject.ts. Rendering stays in focused components.
+- public/_headers retains the strict same-origin policy. No inline styling or external image/font service is required.
+
+## API reality
+
+The independent backend remains the health handler, Node server, and Cloudflare Workers adapter using httpServerHandler/nodejs_compat. GET/HEAD /api/health only; database/auth/inquiries report not-configured. The website does not call an inquiry API. Release hardening makes invalid-request responses retain the normal cache/security headers. Node/Worker types, four API tests, build, formatting, dependency audit, Worker bundle dry run, and local Worker HTTP probes pass.
 
 ## Verification
 
-Initial setup evidence:
+- npm run check passed: ESLint, strict TypeScript, Vite production build.
+- Full release Playwright suite: 45 passed, 1 skipped. Details are in docs/RELEASE_AUDIT.md. The skipped mobile duplicate of the viewport matrix is exercised by the desktop project.
+- Browser coverage: concept interactions, prefilled briefs, required/whitespace validation, clipboard/download fidelity, explicit save/restore, no autosave/submission, storage/clipboard failure, malformed/expired drafts, checklist/Undo/export, clear confirmation, theme persistence, skip-link focus, mobile menu/Escape, legacy team links, and production Content Security Policy.
+- Layout matrix: 320/768/1024/2560px in both themes. Desktop Chrome and Pixel 7 browser emulation cover core journeys.
+- Fresh desktop/390px screenshots were inspected in both themes for home, shop dialog, planner, and desk. Local artifacts: .artifacts/rebuild (ignored).
+- Windows clipboard CRLF normalization is accounted for; downloaded UTF-8 content remains exact.
+- Audit regressions cover route-preserving skip/top links, favorites hidden by stale filters, pending checklist/Undo across tabs and Clear, repeated concept-prefill focus, detail/back focus, large saved drafts, and the Updates page. Layout coverage now includes Updates.
+- Targeted Prettier checks and git diff --check passed. No generated build/test output is included in the changes.
+- No physical-device, real-account, authenticated backend, email-delivery, or live Cloudflare verification is claimed.
 
-- Frontend `npm run check`: ESLint, strict TypeScript, and Vite production build passed.
-- `npm run test:e2e`: 10 Chromium checks passed across desktop and emulated mobile, including 320px layout, navigation, concept filters/dialogs, focus restoration, clipboard copy, downloads, Unicode/literal text preservation, and no inquiry network submission.
-- Desktop and mobile full-page screenshots were visually inspected. Local artifacts: `.artifacts/desktop-home.png` and `.artifacts/mobile-home.png` (ignored by Git).
-- Backend `npm run check`: strict types, three behavioral tests, and compilation passed. Real local HTTP smoke check: health 200 with no-store; unsupported inquiry POST 404.
-- Dependency audits reported zero known vulnerabilities at setup time.
-- The Sura skill passed the bundled skill-creator validator. GitHub workflows are prepared but have not run remotely. Repository origins and existing remote main hashes were checked.
-- After local Workers preparation, the owner authorized committing and pushing both existing main branches to GitHub. The owner will trigger deployment from their Cloudflare tabs. Verify remote Git hashes after pushing and verify public URLs separately after deployment; no production success is established by these local checks.
+## Next useful work
 
-Do not equate local checks with deployed service verification. Database, email delivery, authenticated access, real client messaging, and production hosting remain unverified because they are not connected. Mobile checks are browser emulation, not a physical-device test.
+1. Owners review the rebuilt site and supply real public contact details.
+2. Verify frontend/API on their actual Cloudflare URLs when publishing this rebuild.
+3. Choose data/auth and complete one inquiry flow: validated submission → durable storage → protected team inbox → follow-up.
+4. Connect an accepted inquiry to a project, tasks, files, client review, and handoff. Keep internal notes and client-visible material separate.
+5. Add chat, notifications, calendars, and team tools when supporting records and permissions are real.
 
-## How to maintain memory
+## Keep context current
 
-After meaningful work, update current facts and open items here, add material architectural/product choices to `DECISIONS.md`, and record the commands and actual results. Keep one canonical fact rather than duplicate histories. If another assistant cannot load repository files automatically, tell it: “Read AGENTS.md and docs/PROJECT_MEMORY.md before working.” Never put credentials, real customer records, or unrelated projects' details in memory.
+Read docs/DESIGN.md for current rules, docs/DECISIONS.md for decisions, docs/SETUP.md for commands. DESIGN_RESEARCH.md and PRODUCT_RESEARCH.md retain pre-rebuild observations and the wider feature map; their old status columns are historical.
+
+After meaningful work replace stale facts here, record actual verification, and append material decisions. Keep credentials, customer records, and unrelated project internals out of this memory.

@@ -37,8 +37,8 @@ export default function Modal({
       }}
     >
       <div className="dialog-inner">
-        <button className="close-button" onClick={onClose} aria-label="Close preview" autoFocus>
-          ×
+        <button className="close-button" onClick={onClose} aria-label="Close dialog" autoFocus>
+          <span aria-hidden="true">×</span>
         </button>
         {children}
       </div>

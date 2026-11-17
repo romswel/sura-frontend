@@ -1,4 +1,4 @@
-# Start and grow Sura
+﻿# Start and grow Sura
 
 ## Run locally
 
@@ -38,6 +38,12 @@ Until an address is configured, the site explains that the contact channel is be
 
 All `VITE_*` values are public build output. Never place a database password, privileged Supabase key, email-provider secret, or authentication secret in frontend environment variables. Environment files are ignored; `.env.example` documents only blank/public configuration.
 
+## Personal project desk and drafts
+
+The public #/planner route shares the brief builder and adds a launch checklist. Changes live in the open app by default. Explicit Save buttons write sura.project-draft.v1 to this browser's localStorage; later edits do not autosave. Saved drafts are validated on load and accepted for 30 days. Clear project removes them after confirmation.
+
+This is a personal browser tool, not an account or team database. Copy/download work without storage. If saving is unavailable, the UI explains that and retains the in-memory plan. The separate sura.theme key stores appearance only.
+
 ## Git workflow
 
 The repositories are already initialized and connected:
@@ -49,13 +55,15 @@ The repositories are already initialized and connected:
 
 Open `../sura.code-workspace` in VS Code to see both folders locally. When cloning on another machine, clone both repositories as siblings. If the workspace file is absent, use File → Add Folder to Workspace. No parent `git init` is needed.
 
-Before changing code, run `git status` and fetch the remote. Make a small branch for a focused change when collaborating; merge reviewed changes to `main`. Run that repository's checks, inspect `git diff`, stage only intended files, and use a plain descriptive commit message. Never commit `.env`, `node_modules`, generated output, credentials, or customer data. A push uploads code; it does not prove a production deployment succeeded.
+Before changing code, run `git status` and fetch the remote. Follow the owners' agreed branch workflow; for the November 17 rebuild release they explicitly requested the existing `main` branches with no new branch. Run that repository's checks, inspect `git diff`, stage only intended files, and use a plain descriptive commit message. Never commit `.env`, `node_modules`, generated output, credentials, or customer data. A push uploads code; it does not prove a production deployment succeeded.
 
 GitHub Actions workflows validate pushes and pull requests. They do not provision services or publish this site. Branch protection, collaborators, GitHub organization ownership, and repository visibility are account settings and have not been changed by this local setup. Review the included pull-request template for each change.
 
-## Zero-budget service shortlist — not connected
+## Earlier zero-budget research — hosting now selected
 
-Checked against official documentation on 2026-11-17. Free tiers have limits and can change; verify current terms and suitability before creating accounts. Owners are researching providers, so these are options, not adopted architecture.
+Current release status: the owner clarified that public URLs are not set and requested a GitHub push for now. Keep Pages build command `npm run build`, output `dist`, and Node 24. The Worker entry and local verification are maintained in the backend repository. Do not report live production as verified until the actual public website/API can be checked.
+
+Checked against official documentation on 2026-11-17. Free tiers have limits and can change; verify current terms and suitability before creating accounts. Cloudflare Pages and Workers have since been selected and the owner reports setup is complete. The table below is historical setup research; data/auth choices remain open.
 
 | Need                      | Starting option                                                    | What to decide                                                                                                                                                           |
 | ------------------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -72,7 +80,7 @@ A custom domain is optional and generally costs money. Use the host's free subdo
 ## Build in a useful order
 
 1. Review the website, replace the working name if needed, and add real contact details.
-2. Select a free host; publish and test the actual contact journey from a phone and desktop.
+2. Publish to the selected Cloudflare setup and test the actual contact journey from a phone and desktop.
 3. Use the site in direct outreach. Learn what the first potential clients ask for before adding categories or packages.
 4. Add a real inquiry API and private team inbox using the selected database/auth provider. Validate input on the server, protect against abuse, define access rules and retention, and test that one account cannot access another's records.
 5. Add projects/tasks from a real delivery workflow. Then scoped client accounts, files, and conversations. Keep message history and client records in durable storage; authenticate every read/write and subscription.
