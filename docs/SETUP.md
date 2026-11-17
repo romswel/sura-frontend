@@ -61,7 +61,7 @@ GitHub Actions workflows validate pushes and pull requests. They do not provisio
 
 ## Earlier zero-budget research — hosting now selected
 
-Current release status: the owner clarified that public URLs are not set and requested a GitHub push for now. Keep Pages build command `npm run build`, output `dist`, and Node 24. The Worker entry and local verification are maintained in the backend repository. Do not report live production as verified until the actual public website/API can be checked.
+Current release status: the owner requested a GitHub push while URLs were not set. Cloudflare then supplied https://sura-frontend-3wf.pages.dev; the rebuilt frontend and deployed asset identity were verified there. Keep Pages build command `npm run build`, output `dist`, and Node 24. The Worker entry and local verification are maintained in the backend repository. Its build passed, but its public endpoint still needs verification.
 
 Checked against official documentation on 2026-11-17. Free tiers have limits and can change; verify current terms and suitability before creating accounts. Cloudflare Pages and Workers have since been selected and the owner reports setup is complete. The table below is historical setup research; data/auth choices remain open.
 

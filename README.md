@@ -25,4 +25,6 @@ Concepts are fictional. Contacts stay blank until the owners add them. No inquir
 
 Start with [AGENTS.md](AGENTS.md) and [shared memory](docs/PROJECT_MEMORY.md). See [design](docs/DESIGN.md), [product research](docs/PRODUCT_RESEARCH.md), [setup](docs/SETUP.md), [decisions](docs/DECISIONS.md), and [asset provenance and prompts](docs/ASSETS.md).
 
-The independent [sura-backend](https://github.com/romswel/sura-backend) currently provides process health only. Cloudflare is selected, but the owner confirmed that public URLs have not been set yet and requested a GitHub push for now. A successful push or CI run does not verify a live Cloudflare deployment. See [release audit](docs/RELEASE_AUDIT.md) for the validation scope.
+The website is live at [sura-frontend-3wf.pages.dev](https://sura-frontend-3wf.pages.dev). Cloudflare supplied this assigned address after the release push; the deployed assets and desktop/mobile project-desk journey were checked. Updates are at [#/updates](https://sura-frontend-3wf.pages.dev/#/updates).
+
+The independent [sura-backend](https://github.com/romswel/sura-backend) currently provides process health only. Its GitHub checks and Cloudflare Workers build passed, but a public API endpoint has not been verified. See [release audit](docs/RELEASE_AUDIT.md) for validation scope and limits.

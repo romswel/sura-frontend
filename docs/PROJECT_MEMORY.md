@@ -11,7 +11,7 @@ Current facts for human and AI collaborators. Read this and AGENTS.md before wor
 - Research informs craft, workflows, recovery, and access. Reference products are not Sura client deliveries or assets to copy.
 - Main identity: charcoal/black, gray, white, restrained depth, original geometric S mark. Both light and dark themes now work.
 - Contact details remain blank by explicit owner instruction. Do not derive them from Git identity or invent people, locations, clients, testimonials, metrics, or guarantees.
-- Cloudflare Pages and Workers are selected. During the release audit the owner clarified that public URLs have not been set yet and requested pushing to GitHub for now. No live Cloudflare verification is claimed.
+- Cloudflare Pages and Workers are selected. The owner requested pushing while their public URLs were not set. After the push, Cloudflare supplied an assigned Pages URL: https://sura-frontend-3wf.pages.dev. The public frontend was verified; a public API endpoint remains unverified.
 - Database/auth remain unselected. The private CRM/project/client/chat vision is staged future work. Browser state is never authentication.
 
 ## Workspace and Git
@@ -23,6 +23,7 @@ Current facts for human and AI collaborators. Read this and AGENTS.md before wor
 - Preserve both histories and unrelated work. No Co-authored-by trailers.
 - This rebuild changes frontend source, assets, tests, and documentation. The release audit also hardens backend error headers and tests its shared transport. Reference projects remain untouched.
 - The owner explicitly authorized an audited push on the existing main branches, with no new branch. Verify current commit/push/CI status from Git and GitHub; source publication and a live deployment are separate outcomes.
+- Rebuild source 538a03e and backend hardening f42c393 were pushed, and remote hashes matched. The frontend Pages deployment serves byte-identical JavaScript to the local production build. Backend GitHub CI and its Cloudflare Workers build passed. Frontend GitHub Actions had no observed run for the rebuild; local frontend checks and the Pages deployment passed.
 
 ## Current public product
 
@@ -78,12 +79,13 @@ The independent backend remains the health handler, Node server, and Cloudflare 
 - Windows clipboard CRLF normalization is accounted for; downloaded UTF-8 content remains exact.
 - Audit regressions cover route-preserving skip/top links, favorites hidden by stale filters, pending checklist/Undo across tabs and Clear, repeated concept-prefill focus, detail/back focus, large saved drafts, and the Updates page. Layout coverage now includes Updates.
 - Targeted Prettier checks and git diff --check passed. No generated build/test output is included in the changes.
-- No physical-device, real-account, authenticated backend, email-delivery, or live Cloudflare verification is claimed.
+- Live frontend: assigned production URL and commit-specific preview both returned 200, expected CSP/nosniff, and matching built assets. Fresh 390px/1440px browser checks exercised Updates → project desk → add/complete step with no page errors or overflow.
+- No physical-device, real-account, authenticated backend, email-delivery, or public API endpoint verification is claimed.
 
 ## Next useful work
 
 1. Owners review the rebuilt site and supply real public contact details.
-2. Verify frontend/API on their actual Cloudflare URLs when publishing this rebuild.
+2. Configure/verify the public Worker API URL and any future custom domain. The assigned Pages URL already works; contacts still need owner configuration.
 3. Choose data/auth and complete one inquiry flow: validated submission → durable storage → protected team inbox → follow-up.
 4. Connect an accepted inquiry to a project, tasks, files, client review, and handoff. Keep internal notes and client-visible material separate.
 5. Add chat, notifications, calendars, and team tools when supporting records and permissions are real.

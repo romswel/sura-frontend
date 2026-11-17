@@ -26,4 +26,15 @@ Git/GitHub remain the evidence for current commit and remote validation status.
 
 ## Release boundary
 
-The owner confirmed that public Cloudflare URLs have not been set and requested pushing for now. GitHub publication is authorized. Live deployment, physical-device behavior, email delivery, accounts, payments, a database, and private workflows are not verified or implemented by this release. Local Wrangler and a bundle dry run do not prove production hosting.
+The owner requested pushing while URLs were not set. Both existing main branches were pushed without force or a new branch. Rebuild source commit: 538a03eb8737e890e99e689c078c0c45c50eda80. Backend runtime/test commit: f42c3937e925fb3eeaba9ab30ed72d5b39c67b4e. Remote hashes matched.
+
+Cloudflare then reported successful Pages and Workers builds. Its Pages result supplied the assigned preview URL, allowing direct public verification:
+
+- Production: https://sura-frontend-3wf.pages.dev.
+- Commit preview: https://d6e707b9.sura-frontend-3wf.pages.dev.
+- Both returned 200, expected CSP/nosniff headers, the release script path, and JavaScript whose SHA-256 matched the local production bundle.
+- Fresh browser checks at 390px and 1440px exercised home → Updates → project desk → add/complete a local checklist step, with no page errors or horizontal overflow. Only browser-local state was changed.
+- Backend GitHub Actions run 44029292651 completed successfully. The Cloudflare Workers build for f42c393 also succeeded. No public API endpoint was available to probe.
+- Frontend GitHub Actions had no observed run for 538a03e, despite its workflow being active. Local build and 45 browser tests passed, and the Cloudflare Pages deployment succeeded; remote browser CI is not claimed.
+
+Physical-device behavior, email delivery, accounts, payments, a database, and private workflows remain outside this release's verified functionality. Local Wrangler and build success do not prove public API health.

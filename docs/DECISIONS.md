@@ -57,3 +57,5 @@ The personal desk is not account-scoped or collaborative. Copy/UTF-8 download re
 The owner explicitly requested a full audit, fixes, release notes in Updates, and a push on the existing branches without creating a branch. Add a public source-managed release history at #/updates, with versioned entries in src/updates.ts. Describe working features and remaining boundaries together; do not imply planned server integrations exist.
 
 The owner subsequently clarified that public Cloudflare URLs have not been set and requested continuing with a GitHub push for now. Validate both repositories and local Node/Worker behavior; verify remote commit identity and GitHub checks after pushing. Public Cloudflare deployment remains unverified until URLs are configured and available. Do not provision a replacement host.
+
+After the push, Cloudflare supplied its assigned Pages address. Direct HTTP/asset checks and desktop/mobile browser smoke checks verified the frontend at https://sura-frontend-3wf.pages.dev. The API's Workers build passed, but its public endpoint remains unverified. This later evidence supersedes the frontend's earlier unverified deployment status.
