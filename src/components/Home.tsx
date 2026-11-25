@@ -29,9 +29,9 @@ export default function Home({ onPreview, onBegin, planner }: Props) {
             <span>INDEPENDENT WEB DESIGN & DEVELOPMENT</span>
           </div>
           <h1 id="hero-title">
-            Your business.
+            Welcome to
             <br />
-            <span>Built for the web.</span>
+            <span>Surafy.inc</span>
           </h1>
           <p>
             We’re Sura. A small team building considered websites, online shops, and useful web
